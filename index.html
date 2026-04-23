@@ -67,7 +67,7 @@
       </div>
 
       <div class="field hidden" id="q2wrap">
-        <label for="q2">Second question — what is her last name?</label>
+        <label for="q2">Correct! Second question — what is her last name?</label>
         <input id="q2" name="q2" type="text" autocomplete="off" inputmode="text" />
       </div>
 
@@ -135,7 +135,7 @@
 
   // Specific wrong-answer hint (example: "smith" -> give tailored hint)
   if(userQ2 === "musumi"){
-    status.textContent = "Wait, that is not really her last name? It's Miyamizu.";
+    status.textContent = "Wait, that is not really her last name? Nope, it's Miyamizu.";
     return;
   }
 
@@ -146,7 +146,7 @@
 
   downloadLink.href = DOWNLOAD_URL;
   downloadWrap.classList.remove("hidden");
-  status.textContent = "Correct! — link revealed.";
+  status.textContent = "Correct! — download link revealed.";
      status.textContent = "Lets meet! :).";
   });
 
