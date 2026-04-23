@@ -1,108 +1,148 @@
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+Use that remote image URL directly. Below is the updated index.html with the cover set to the provided Wikimedia image and small accessibility tweaks — replace only SPOTIFY_URL, DOWNLOAD_URL, ANSWER1, ANSWER2 as before.
+
+```html
+<!doctype html>
+<html lang="en">
 <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday</title>
 <style>
-.standardDiv {
-	border: 2px outset red;
-	background-color: FFFFE0;
-	text-align: center;
-}
-.listenDiv {
-	background-color: FFFFE0;
-	align: center;
-}
-table.center {
-	margin-left: auto;
-	margin-right: auto;
-}
-.linkeliste {
-	text-align: left;
-}
+  :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; color:#111}
+  html,body{height:100%;margin:0;background:#fff}
+  .wrap{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:20px;gap:18px}
+  header{width:100%;max-width:720px;display:flex;flex-direction:row;align-items:center;gap:12px}
+  .cover{width:88px;height:88px;flex:0 0 88px;border-radius:8px;overflow:hidden;background:#eee}
+  .cover img{width:100%;height:100%;object-fit:cover;display:block}
+  h1{font-size:1.15rem;margin:0}
+  p.lead{margin:0;color:#444}
+  main{width:100%;max-width:720px;display:flex;flex-direction:column;gap:14px}
+  a.spotify{display:inline-block;background:#1db954;color:#fff;text-decoration:none;padding:10px 14px;border-radius:8px;font-weight:600}
+  .quiz{background:#f7f7f8;border:1px solid #eee;padding:14px;border-radius:10px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  label{font-size:0.9rem;color:#333}
+  input[type="text"]{padding:10px;border:1px solid #ddd;border-radius:8px;font-size:1rem}
+  button{padding:10px 12px;border-radius:8px;border:0;background:#0b63d6;color:#fff;font-weight:600}
+  .hint{font-size:0.85rem;color:#666}
+  .hidden{display:none}
+  footer{margin-top:18px;color:#666;font-size:0.85rem}
+  @media(min-width:640px){
+    .cover{width:120px;height:120px;flex:0 0 120px}
+    h1{font-size:1.5rem}
+  }
 </style>
 </head>
 <body>
-<div class="standardDiv">
-	<h3>Willkommen beim Bolle Racing Team!</h3>
-	<p text-align: left;>Unsere nächsten Teilnahmen:</p>
-	<table class="center">
-		<tr>
-			<th>Datum</th>
-			<th>Event</th>
-			<th>Aktion</th>
-		</tr>
-  		<tr>
-	  		<td>17-19. Dezember 2021</td>
-			<td><a href="https://bolle-bonn.de/news/nala-weihnachtsbaumaktion-2021"rel="noopener" target="_blank"> NALA Weihnachtsbaum-Aktion 2021</td>
-			<td>Für einen guten Zweck</td>
-		</tr>
-  		<tr>
-			<td>Ostern 2022</td>
-			<td><a href="https://schokofahrt.de/" rel="noopener" target="_blank">Schokofahrt #11</td>
-			<td>Für einen guten Zweck</td>
-  		</tr>
-  		<tr>
-			<td>22. Mai 2022</td>
-			<td><a href="https://www.rundumkoeln.de/" rel="noopener" target="_blank">Rund um Köln</td>
-			<td>120km Radrennen</td>
-	  	</tr>
-	  	<tr>
-			<td>03. Juli 2022</td>
-			<td><a href="https://bybike.de/" rel="noopener" target="_blank">Bonn-Eupen-Bonn</td>
-			<td>Radmarathon</td>
-	  	</tr>
-		<tr>
-			<td>Oktober 2022</td>
-			<td><a href="https://schokofahrt.de/" rel="noopener" target="_blank">Schokofahrt #12</td>
-			<td>Für einen guten Zweck</td>
-	  	</tr>
-	</table>
-	<br>
-	<table class="center">
-		<tr>vorige Teilnahmen:</tr>
-		<tr>
-			<th>Datum</th>
-			<th>Event</th>
-			<th>Aktion</th>
-  	</tr>
-  	<tr>
-		<td>Oktober 2021</td>
-		<td><a href="https://schokofahrt.de/" rel="noopener" target="_blank">Schokofahrt #10</td>
-		<td>Für einen guten Zweck</td>
-  	</tr>
-  	<tr>
-		<td>August 2021</td>
-		<td><a href="https://www.cito-hennef.de/" rel="noopener" target="_blank">RC Cito 1906 Geistingen e.V.</td>
-		<td>115km RTF</td>
-  	</tr>
-</table>
-<br>
-<div class="standardDiv">
-	<div class="listenDiv">
-		<p>Hier kann man gut durch Finanz- oder Sachspenden unterstützen:
-		<ul class="linkeliste">
-			<li> <a href="https://bolle-bonn.de/" rel="noopener" target="_blank"> Bolle</a>
-				<li>braucht Lastenräder, Ersatzteile, Unterkunft und Geld, damit es weiter erfolgreich kostenlos und für alle verfügbar ist</li>
-			</li>
-			<li> <a href="https://bonnimwandel.de/wandel-foerdern/" rel="noopener" target="_blank">Bonn Im Wandel</a></li>
-			<li> <a href="https://www.nala-ev.org/" rel="noopener" target="_blank"> NaLa</a>
-				<li> braucht Spenden und Unterstützung bei Veranstaltungen
-			</li>
-			<li> <a href="https://www.zesabo.de/" rel="noopener" target="_blank"> ZeSaBo</a></li>
-				<li> braucht Sachspenden, Geldspenden und Zeitspenden</li>
-			</li>
-		</ul>
-		Außerdem sind wir stolze Unterstützer von:
-		<ul class="linkeliste">
-			<li> <a href="https://flids.de/" rel="noopener" target="_blank"> Fahrradladen in der Südstadt</a></li>
-			<li> <a href="https://www.solawi-bonn.de/" rel="noopener" target="_blank"> SoLaWi</a></li>
-			<li> <a href="https://schokofahrt.de/" rel="noopener" target="_blank">Schokofahrt</a></li>
-			<li> <a href="https://chocolatemakers.nl/" rel="noopener" target="_blank">Chocolatemakers</a></li>
-			<li> <a href="https://www.bonn4future.de/de/unterstuetzen" rel="noopener" target="_blank">Bonn 4 Future</a></li>
-		</ul>
+<div class="wrap">
+  <header>
+    <div class="cover">
+      <img src="https://upload.wikimedia.org/wikipedia/en/b/b3/The_Dear_Hunter_-_Act_IV_Cover_Art.jpg"
+           alt="Album cover — The Dear Hunter Act IV" />
+    </div>
+    <div>
+      <h1>Happy Birthday!</h1>
+      <p class="lead">Wishing you a joyful day — enjoy this album 🎶</p>
+    </div>
+  </header>
 
-	</div>
+  <main>
+    <div>
+      <a id="spotifyLink" class="spotify" href="#" target="_blank" rel="noopener">Open on Spotify</a>
+    </div>
+
+    <section class="quiz" id="quizSection" aria-live="polite">
+      <div class="field" id="q1wrap">
+        <label for="q1">First question — the nickname I gave you</label>
+        <input id="q1" name="q1" type="text" autocomplete="off" inputmode="text" />
+        <div class="hint">Answer is case-insensitive. Correct answer reveals the next question.</div>
+      </div>
+
+      <div class="field hidden" id="q2wrap">
+        <label for="q2">Second question — what is her last name?</label>
+        <input id="q2" name="q2" type="text" autocomplete="off" inputmode="text" />
+        <div class="hint">Both answers must be correct to reveal the download link.</div>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+        <button id="checkBtn" type="button">Check</button>
+        <div id="status" aria-live="polite" style="color:#b00;font-size:0.95rem"></div>
+      </div>
+
+      <div id="downloadWrap" class="hidden" style="margin-top:12px">
+        <p style="margin:0 0 8px 0">Encrypted album download (7‑Zip AES‑256):</p>
+        <a id="downloadLink" href="#" download>Download encrypted album</a>
+        <p class="hint" style="margin-top:8px">You will need the passphrase to decrypt the archive.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    No tracking — just music.
+  </footer>
 </div>
-<p>Diese Seite ist noch im Aufbau. Bald kommen hier mehr Inhalte, Infos, Fotos und ein schöneres Design. Hoffentlich. Sag gerne Bescheid wenn was wichtiges fehlt</p>
+
+<script>
+(function(){
+  // ===== CONFIGURE =====
+  const SPOTIFY_URL = "https://open.spotify.com/album/2swXk5knzXcmrAI7cGYw7C";
+  const DOWNLOAD_URL = "https://example-bucket.example.com/path/encrypted-album.7z";
+  const ANSWER1 = "sunshine";
+  const ANSWER2 = "rivera";
+  // =====================
+
+  const spotifyLink = document.getElementById("spotifyLink");
+  const q1 = document.getElementById("q1");
+  const q2 = document.getElementById("q2");
+  const q2wrap = document.getElementById("q2wrap");
+  const checkBtn = document.getElementById("checkBtn");
+  const status = document.getElementById("status");
+  const downloadWrap = document.getElementById("downloadWrap");
+  const downloadLink = document.getElementById("downloadLink");
+
+  spotifyLink.href = SPOTIFY_URL;
+
+  function normalize(s){ return String(s||"").trim().toLowerCase(); }
+
+  q1.addEventListener("input", function(){
+    if(normalize(q1.value) === ANSWER1){
+      q2wrap.classList.remove("hidden");
+      status.textContent = "";
+    } else {
+      q2wrap.classList.add("hidden");
+      downloadWrap.classList.add("hidden");
+      status.textContent = "";
+    }
+  });
+
+  checkBtn.addEventListener("click", function(){
+    status.textContent = "";
+    downloadWrap.classList.add("hidden");
+
+    if(normalize(q1.value) !== ANSWER1){
+      status.textContent = "First answer incorrect.";
+      return;
+    }
+
+    if(normalize(q2.value) !== ANSWER2){
+      status.textContent = "Second answer incorrect.";
+      return;
+    }
+
+    downloadLink.href = DOWNLOAD_URL;
+    downloadWrap.classList.remove("hidden");
+    status.textContent = "Correct — link revealed.";
+  });
+
+  [q1,q2].forEach(inp=>{
+    inp.addEventListener("keydown", function(e){
+      if(e.key === "Enter"){
+        e.preventDefault();
+        checkBtn.click();
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
+```
