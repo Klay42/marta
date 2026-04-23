@@ -81,7 +81,7 @@
       <div id="downloadWrap" class="hidden" style="margin-top:12px">
         <p style="margin:0 0 8px 0">Encrypted album download (7‑Zip AES‑256):</p>
         <a id="downloadLink" href="#" download>Download encrypted album</a>
-        <p class="hint" style="margin-top:8px">You will need the passphrase to decrypt the archive.</p>
+        <p class="hint" style="margin-top:8px">Ask me for the passphrase to decrypt the archive.</p>
       </div>
     </section>
   </main>
@@ -125,22 +125,30 @@
   });
 
   checkBtn.addEventListener("click", function(){
-    status.textContent = "";
-    downloadWrap.classList.add("hidden");
+  status.textContent = "";
+  downloadWrap.classList.add("hidden");
 
-    if(normalize(q1.value) !== ANSWER1){
-      status.textContent = "First answer incorrect.";
-      return;
-    }
+  if(normalize(q1.value) !== normalize(ANSWER1)){
+    status.textContent = "First answer incorrect.";
+    return;
+  }
 
-    if(normalize(q2.value) !== ANSWER2){
-      status.textContent = "Second answer incorrect.";
-      return;
-    }
+  const userQ2 = normalize(q2.value);
 
-    downloadLink.href = DOWNLOAD_URL;
-    downloadWrap.classList.remove("hidden");
-    status.textContent = "Correct — link revealed.";
+  // Specific wrong-answer hint (example: "smith" -> give tailored hint)
+  if(userQ2 === "smith"){
+    status.textContent = "Ha! That is not her last name. What does it mean?";
+    return;
+  }
+
+  if(userQ2 !== normalize(ANSWER2)){
+    status.textContent = "Second answer incorrect.";
+    return;
+  }
+
+  downloadLink.href = DOWNLOAD_URL;
+  downloadWrap.classList.remove("hidden");
+  status.textContent = "Correct — link revealed.";
   });
 
   [q1,q2].forEach(inp=>{
