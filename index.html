@@ -77,9 +77,9 @@
       </div>
 
       <div id="downloadWrap" class="hidden" style="margin-top:12px">
-      <p style="margin:0 0 8px 0">asdf</p>
-        <a id="downloadLink" href="#" download>fdsa</a>
-        <p class="hint" style="margin-top:8px">Correct! You have unlocked a nice little date with me. We can do it remotely, it requires no conversation, no phone and no intimacy either. Find a time and day in the future with me, that does not stress you and allows you focus. I will prepare the rest.</p>
+      <p style="margin:0 0 8px 0"> </p>
+        <a id="downloadLink" href="#" download> </a>
+        <p class="hint" style="margin-top:8px"> </p>
       </div>
     </section>
   </main>
@@ -93,7 +93,7 @@
 (function(){
   // ===== CONFIGURE =====
   const SPOTIFY_URL = "https://open.spotify.com/album/2swXk5knzXcmrAI7cGYw7C";
-  const DOWNLOAD_URL = "https://example-bucket.example.com/path/encrypted-album.7z";
+  const DOWNLOAD_URL = " ";
   const ANSWER1 = "mitsuha";
   const ANSWER2 = "miyamizu";
   // =====================
@@ -146,7 +146,7 @@
 
   downloadLink.href = DOWNLOAD_URL;
   downloadWrap.classList.remove("hidden");
-  status.textContent = "Correct! — download link revealed.";
+  status.textContent = "Correct! You have unlocked a date with me. I know you are busy, detoxing, finding your balance. But not to worry: we can do it remotely, it requires no conversation, no phone and no intimacy either. Find a time and day in the future with me, that does not stress you and allows you focus. Does not have to be soon. I will prepare the rest.";
   });
 
   [q1,q2].forEach(inp=>{
