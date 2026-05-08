@@ -50,7 +50,7 @@
       <h1>Happy Birthday Marta!</h1>
       <p class="lead">Wishing you a pleasant time — enjoy this album 🎶</p>
       <p class="lead">The vinyl is just for the gesture ;-)</p>
-      <p class="lead">There is also an mp3 download prepared for you</p>
+      <p class="lead">You can listen to it on the provided spotify link and there is also an mp3 download if you are interested.</p>
     </div>
   </header>
 
@@ -77,9 +77,7 @@
       </div>
 
       <div id="downloadWrap" class="hidden" style="margin-top:12px">
-        <p style="margin:0 0 8px 0">Encrypted album download (7‑Zip AES‑256):</p>
-        <a id="downloadLink" href="#" download>Download encrypted album</a>
-        <p class="hint" style="margin-top:8px">Ask me for the passphrase to decrypt the archive. Also send nudes! Your poor boy must be running dry by now.</p>
+        <p class="hint" style="margin-top:8px">Correct! You have unlocked a nice little date with me. We can do it remotely, it requires no conversation, no phone and no intimacy either. Find a time and day in the future with me, that does not stress you and allows you focus. I will prepare the rest.</p>
       </div>
     </section>
   </main>
@@ -135,7 +133,7 @@
 
   // Specific wrong-answer hint (example: "smith" -> give tailored hint)
   if(userQ2 === "musumi"){
-    status.textContent = "Wait, that is not really her last name? Nope, it's Miyamizu.";
+    status.textContent = "Wait, that is not really her last name? Nope, it's Miyamizu. Try again with Miyamizu and wonder what musumi meant in the movie ;-)";
     return;
   }
 
@@ -146,7 +144,7 @@
 
   downloadLink.href = DOWNLOAD_URL;
   downloadWrap.classList.remove("hidden");
-  status.textContent = "Correct! — download link revealed. Lets meet!";
+  status.textContent = "Correct! — download link revealed.";
   });
 
   [q1,q2].forEach(inp=>{
